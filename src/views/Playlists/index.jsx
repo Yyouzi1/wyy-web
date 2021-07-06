@@ -34,10 +34,10 @@ const Index = (props) => {
             cat: cats[selectIndex],
         })
 
-        if (res.data.code === 200) {
-            setTopName(res.data.playlists[0].name)
-            setTopDesc(res.data.playlists[0].description)
-            setTopCover(res.data.playlists[0].coverImgUrl)
+        if (res.code === 200) {
+            setTopName(res.playlists[0].name)
+            setTopDesc(res.playlists[0].description)
+            setTopCover(res.playlists[0].coverImgUrl)
         }
     }
 
@@ -47,9 +47,9 @@ const Index = (props) => {
             offset: (page - 1) * 10,
         })
 
-        if (res.data.code === 200) {
-            setTopPlayLists(res.data.playlists)
-            setTotal(res.data.total)
+        if (res.code === 200) {
+            setTopPlayLists(res.playlists)
+            setTotal(res.total)
         }
     }
     // 头部

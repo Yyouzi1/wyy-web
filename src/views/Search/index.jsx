@@ -26,19 +26,19 @@ const Index = (props) => {
             offset: (page - 1) * limit,
         })
 
-        if (res.data.code === 200) {
+        if (res.code === 200) {
             switch (type) {
                 case '1': // 歌曲
-                    setSongList(res.data.result.songs)
-                    setTotal(res.data.result.songCount)
+                    setSongList(res.result.songs)
+                    setTotal(res.result.songCount)
                     break
                 case '1000': // 歌单
-                    setPlayList(res.data.result.playlists)
-                    setTotal(res.data.result.playlistCount)
+                    setPlayList(res.result.playlists)
+                    setTotal(res.result.playlistCount)
                     break
                 case '1004': // MV
-                    setMvList(res.data.result && res.data.result.mvs)
-                    setTotal(res.data.result.mvCount)
+                    setMvList(res.result && res.result.mvs)
+                    setTotal(res.result.mvCount)
                     break
                 default:
                     break

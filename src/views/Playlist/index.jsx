@@ -30,15 +30,15 @@ const Index = (props) => {
     const getPlaylistDetailData = async () => {
         const res = await playlistDetail({ id })
 
-        if (res.data.code === 200) {
-            setTableData(res.data.playlist.tracks)
-            setTitle(res.data.playlist.name)
-            setAvatarUrl(res.data.playlist.creator.avatarUrl)
-            setCoverImgUrl(res.data.playlist.coverImgUrl)
-            setSignature(res.data.playlist.creator.signature)
-            setNickname(res.data.playlist.creator.nickname)
-            setTags(res.data.playlist.tags)
-            setCreateTime(moment(res.data.playlist.createTime).format('YYYY-MM-DD'))
+        if (res.code === 200) {
+            setTableData(res.playlist.tracks)
+            setTitle(res.playlist.name)
+            setAvatarUrl(res.playlist.creator.avatarUrl)
+            setCoverImgUrl(res.playlist.coverImgUrl)
+            setSignature(res.playlist.creator.signature)
+            setNickname(res.playlist.creator.nickname)
+            setTags(res.playlist.tags)
+            setCreateTime(moment(res.playlist.createTime).format('YYYY-MM-DD'))
         }
     }
 
@@ -46,8 +46,8 @@ const Index = (props) => {
     const getHotCommentsData = async () => {
         const res = await hotComments({ id })
 
-        if (res.data.code === 200) {
-            setHotComments(res.data.hotComments)
+        if (res.code === 200) {
+            setHotComments(res.hotComments)
         }
     }
 
@@ -58,9 +58,9 @@ const Index = (props) => {
             offset: (page - 1) * limit,
         })
 
-        if (res.data.code === 200) {
-            setNewComments(res.data.comments)
-            setTotal(res.data.total)
+        if (res.code === 200) {
+            setNewComments(res.comments)
+            setTotal(res.total)
         }
     }
 

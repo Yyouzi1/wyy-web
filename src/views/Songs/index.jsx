@@ -20,8 +20,8 @@ const Index = (props) => {
             type: types[selectIndex].type,
         })
 
-        if (res.data.code === 200) {
-            const data = res.data.data.map((item) => {
+        if (res.code === 200) {
+            const data = res.data.map((item) => {
                 return {
                     id: item.id,
                     album: {

@@ -1,8 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 // 渲染评价内容
-const Index = ({ hotComments=[], newComments=[], total }) => {
-    console.log(newComments);
+const Index = ({ hotComments = [], newComments = [], total }) => {
     return (
         <div>
             {hotComments.length > 0 && (

@@ -26,8 +26,8 @@ const getMvData = (data) => ({
 export const getBannerInfo = () => {
     return async (dispatch) => {
         const res = await getBannerList()
-        if (res.data.code === 200) {
-            dispatch(getBannerData(res.data.banners))
+        if (res.code === 200) {
+            dispatch(getBannerData(res.banners))
         }
 
     }
@@ -35,8 +35,8 @@ export const getBannerInfo = () => {
 export const getRecommendInfo = () => {
     return async (dispatch) => {
         const res = await getRecommendlist()
-        if (res.data.code === 200) {
-            dispatch(getRecommendData(res.data.result))
+        if (res.code === 200) {
+            dispatch(getRecommendData(res.result))
         }
 
     }
@@ -44,8 +44,8 @@ export const getRecommendInfo = () => {
 export const getNewsongInfo = () => {
     return async (dispatch) => {
         const res = await getNewsong()
-        if (res.data.code === 200) {
-            dispatch(getNewsongData(res.data.result))
+        if (res.code === 200) {
+            dispatch(getNewsongData(res.result))
         }
 
     }
@@ -53,8 +53,8 @@ export const getNewsongInfo = () => {
 export const getMvInfo = () => {
     return async (dispatch) => {
         const res = await getMv()
-        if (res.data.code === 200) {
-            dispatch(getMvData(res.data.result))
+        if (res.code === 200) {
+            dispatch(getMvData(res.result))
         }
 
     }

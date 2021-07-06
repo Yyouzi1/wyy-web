@@ -1,10 +1,24 @@
 import React from 'react'
 import { Input } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
-const Index = () => {
+
+import UserCenter from '../UserCenter'
+
+const Search = () => {
     const goToSearchPage = (e) => {
         window.open(`#/search/${e.target.value}`, '_self')
     }
+    return (
+        <Input
+            size="middle"
+            prefix={<SearchOutlined />}
+            placeholder="搜索"
+            onPressEnter={goToSearchPage}
+        ></Input>
+    )
+}
+
+const Index = () => {
     return (
         <div className="top-container">
             <div className="left-box">
@@ -28,14 +42,11 @@ const Index = () => {
                 </div>
             </div>
             <div className="right-box">
-                <Input
-                    size="middle"
-                    prefix={<SearchOutlined />}
-                    placeholder="搜索"
-                    onPressEnter={goToSearchPage}
-                ></Input>
+                <Search />
+                <UserCenter />
             </div>
         </div>
     )
 }
-export default Index;
+
+export default Index

@@ -24,7 +24,7 @@ const Index = () => {
   useEffect(() => {
     // 播放音乐
     bus.on('playMusic', async (id) => {
-      const { data } = await getSongUrl({ id })
+      const data  = await getSongUrl({ id })
 
       if (data.code === 200) {
         setUrl(data.data[0].url)
