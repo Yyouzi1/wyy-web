@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect,useCallback } from 'react'
 import { allMvs } from '../../api/mvs'
 import Pagination from '../../components/Pagination'
 import { formatCount } from '../../utils/format'
@@ -116,9 +117,8 @@ const Index = (props) => {
 
     const toMv = (id) => {
         props.history.push(`/mv/${id}`)
-    }
-    const getMvListData = async () => {
-
+    }    
+    const getMvListData = useCallback(async () => {
         const res = await allMvs({
             area: areas[areaIndex],
             type: types[typeIndex],
@@ -131,10 +131,11 @@ const Index = (props) => {
             setMvList(res.data)
             setTotal(res.count || total)
         }
-    }
-    useEffect(() => {
-        getMvListData()
-    }, [])
+    })
+    // eslint-disable-next-line
+    useEffect(() => {        
+        getMvListData()         
+    },[])
     const changeArea = (index) => {
         setPage(1)
         setAreaIndex(index)

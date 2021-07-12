@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { Input, Button, Modal, Form, message, Avatar, Menu, Dropdown, Row, Tabs } from 'antd'
 import { qrkey,qrCreate,qrCheck } from '../../api/user'
@@ -37,14 +38,14 @@ const LoginDialog = (props) => {
     };
        
     const handleTabChange = async (activeKey) => {
-        if(activeKey == '2'){
+        if(activeKey === '2'){
             const {data:{unikey,code}} = await qrkey()            
-            if (code == '200'){
+            if (code === 200){
                 const {data:{qrurl}} = await qrCreate({key:unikey})                
                 setQrUrl(qrurl)                
                 timer = setInterval(async () => {
                     const {code,cookie} = await qrCheck({key:unikey})
-                    if(code == 803){
+                    if(code === 803){
                         localStorage.setItem('cookie', cookie)
                         message.success('登录成功');
                         dispatch(actionCreators.loginstatus())

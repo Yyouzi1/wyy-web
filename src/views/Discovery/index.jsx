@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
 import { Swiper, Recommend, Mv, NewSong } from './components'
-
+/* eslint-disable react-hooks/exhaustive-deps */
 const Index = (props) => {
     const { getBannerList, getRecommendList, getNewSong, getMV } = props
     const { banners, mv, recommendList, newsong } = props

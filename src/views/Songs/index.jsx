@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { topSongs } from '../../api/songs'
 import { formatDuration } from '../../utils/format'
 import bus from '../../utils/bus'
+/* eslint-disable react-hooks/exhaustive-deps */
 const Index = (props) => {
     const [selectIndex, setSelectIndex] = useState(0)
     const types = [

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { highquality, topList } from '../../api/playlists'
 import { formatCount } from '../../utils/format'

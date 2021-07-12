@@ -1,6 +1,6 @@
 import * as constants from './constants'
 
-import { loginPhone, loginStatus, logout, dailySignin, qrkey, qrCreate, qrCheck } from '../../../api/user'
+import { loginPhone, loginStatus, logout, dailySignin } from '../../../api/user'
 import { message } from 'antd'
 import md5 from 'js-md5'
 
